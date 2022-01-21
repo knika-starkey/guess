@@ -26,7 +26,12 @@ function showAnswer(event) {
   let name = image.id;
   name = name + ".jpg";
   image.src = "images/" + name;
-  setTimeout(blurAnswer, 2000, image);
+  if (prompt("Введите название картины") == image.id) {
+    alert("Верно!");
+  } else {
+    alert("Неверно!");
+    blurAnswer(image);
+  }
 }
 
 function blurAnswer(image) {
